@@ -24,6 +24,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     company_description: DataTypes.TEXT,
+    city: { allowNull: false, type: DataTypes.STRING},
+    state: { allowNull: false, type: DataTypes.STRING},
+    source: { allowNull: false, type: DataTypes.TEXT},
+    saved_for_later: { type: DataTypes.BOOLEAN},
+    employment_type: { allowNull: false, type: DataTypes.STRING},
+    remote: {  type: DataTypes.BOOLEAN},
+    employment_type: { allowNull: false, type: DataTypes.STRING},
     job_title: { allowNull: false, type:DataTypes.STRING},
     job_description: DataTypes.TEXT,
     notes: DataTypes.TEXT,
@@ -37,3 +44,4 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Job;
 };
+

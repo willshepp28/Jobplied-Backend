@@ -24,6 +24,36 @@ module.exports = {
       company_description: {
         type: Sequelize.TEXT
       },
+      city: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      state: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      source: {
+        allowNull: false,
+        type: Sequelize.TEXT
+      },   
+      saved_for_later: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      employment_type: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },   
+      remote: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
+      experience_level: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },   
       job_title: {
         allowNull: false,
         type: Sequelize.STRING
@@ -61,3 +91,4 @@ module.exports = {
     await queryInterface.dropTable('Jobs');
   }
 };
+
