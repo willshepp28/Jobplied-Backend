@@ -4,7 +4,13 @@
   "description": "backend to jobplied",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "dev": "nodemon -r dotenv/config app.js",
+    "createdb": "npx sequelize-cli db:create",
+    "migrate": "npx sequelize-cli db:migrate",
+    "seed-all": "npx sequelize-cli db:seed:all",
+    "createMigration": "npx sequelize-cli migration:create --name "
   },
   "author": "Will Sheppard",
   "license": "ISC",
