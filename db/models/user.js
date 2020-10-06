@@ -11,12 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.User.hasMany(models.Job);
+      models.User.hasMany(models.Job, { onDelete: "CASCADE"});
     }
   };
   User.init({
-    firstname: {allowNull: false, type: DataTypes.STRING},
-    lastname: {allowNull: false, type: DataTypes.STRING},
+    firstname: {
+      allowNull: false, 
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [3, 30],
+          msg: "Your firstname must be between 3 and 30 characters.  Please try again."
+        }
+      }
+    },
+    lastname: {
+      allowNull: false, 
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [3, 30],
+          msg: "Your lastname  must be between 3 and 30 characters.  Please try again."
+        }
+      }
+    },
     image_url: DataTypes.TEXT,
     password: {allowNull: false, type: DataTypes.TEXT}
   }, {

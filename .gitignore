@@ -97,3 +97,5 @@ typings/
 !.elasticbeanstalk/*.global.yml
 
 notes.txt
+
+db/config

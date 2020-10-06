@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Job.hasMany(models.User)
+      models.Job.hasMany(models.User, { onDelete: "CASCADE"})
     }
   };
   Job.init({
     user_id: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
     },
     company_name: {
       allowNull: false,
