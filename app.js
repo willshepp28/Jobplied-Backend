@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const authenticationAPI = require("./api/authentication.api");
 const userAPI = require("./api/user.api");
 const jobAPI = require("./api/jobs.api");
+const testAPI = require("./api/test.api");
 const PORT = process.env.PORT || 3000;
 
 
@@ -24,6 +25,7 @@ app.get("/", (request, response) => {
 app.use("/api/authentication", authenticationAPI);
 app.use("/api/user", userAPI);
 app.use("/api/job", jobAPI);
+app.use("/api/test", testAPI);
 
 
 app.listen(PORT, () => console.log(`Server listening on Port: ${PORT}`));

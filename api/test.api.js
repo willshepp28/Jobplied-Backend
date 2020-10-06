@@ -1,13 +1,17 @@
-const router = require("express").Router();
 const createUser = require("../helpers/seed/user.seeder");
 const createJob = require("../helpers/seed/job.seeder");
 
+const router = require("express").Router();
+
+
+
 router.get("/", (request, response) => {
-    return response.status(200).json("Youve entered the authentication api endpoint");
+    return response.status(200).json("You are in the test api endpoint");
 });
 
 
-router.get("/testHash", async (request, response) => {
+
+router.get("/testCreateHash", async (request, response) => {
     const Bob = await createUser("Bob","Dole");
 
     return response.status(200).json(Bob);
@@ -48,6 +52,5 @@ router.get("/testCreateJob", (request, response) => {
 
         return response.status(200).json(job);
 })
-
 
 module.exports = router;
