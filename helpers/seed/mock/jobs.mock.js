@@ -34,8 +34,23 @@ const createJob = require("../../seed/user.seeder");
         date: Date.now()
     }
 };
+
+
+1. Create a array with job objects
  */
 
+ const jobSeeds = [
+     
+ ]
+
+
+ const createBulkJobs = () => {
+
+ };
+
+
+
+ module.exports =  createBulkJobs;
 
 
  

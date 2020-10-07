@@ -1,5 +1,6 @@
 const createUser = require("../helpers/seed/user.seeder");
 const newCreateJob = require("../helpers/seed/job.seeder");
+const { response } = require("express");
 
 const router = require("express").Router();
 
@@ -13,6 +14,7 @@ router.get("/", (request, response) => {
 
 router.get("/testCreateHash", async (request, response) => {
     const Bob = await createUser("Bob","Dole");
+    console.log(Bob);
 
     return response.status(200).json(Bob);
 });
@@ -59,6 +61,18 @@ router.get("/testCreateJob", (request, response) => {
 
 
         return response.status(200).json(job);
+});
+
+
+
+
+router.get("/createBulkUsers", (request,response) => {
+    Promise.all([
+        createUser("Will, Smith"),
+        createUser("Bob", "Dole"),
+        createUser("Sarah", "Johnson")
+      ])
+      .then(values => response.status(200).json(values));
 })
 
 module.exports = router;

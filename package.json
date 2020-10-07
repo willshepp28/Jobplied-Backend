@@ -12,7 +12,8 @@
     "create-seed": "npx sequelize-cli seed:generate --name",
     "seed-all": "npx sequelize-cli db:seed:all",
     "undo-seeds": "npx sequelize-cli db:seed:undo:all",
-    "createMigration": "npx sequelize-cli migration:create --name "
+    "createMigration": "npx sequelize-cli migration:create --name ",
+    "seed-one": "npx sequelize-cli db:seed --seed 'some-seed-file' "
   },
   "author": "Will Sheppard",
   "license": "ISC",

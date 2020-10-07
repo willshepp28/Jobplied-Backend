@@ -23,11 +23,16 @@ module.exports = {
       },
     */
 
-    return await queryInterface.bulkInsert("Users", [
-      createUser("Will, Smith"),
-      createUser("Bob", "Dole"),
-      createUser("Sarah", "Johnson")
+ 
+    return Promise.all([
+        createUser("Will", "Smith"),
+        createUser("Bob", "Dole"),
+        createUser("Sarah", "Johnson")
     ])
+    .then(users => {
+      console.log(users);
+      return queryInterface.bulkInsert("Users", users);
+    });
   },
 
   down: async (queryInterface, Sequelize) => {
