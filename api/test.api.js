@@ -1,5 +1,5 @@
 const createUser = require("../helpers/seed/user.seeder");
-const createJob = require("../helpers/seed/job.seeder");
+const newCreateJob = require("../helpers/seed/job.seeder");
 
 const router = require("express").Router();
 
@@ -20,7 +20,8 @@ router.get("/testCreateHash", async (request, response) => {
 
 router.get("/testCreateJob", (request, response) => {
     // (id, company_name, company_description, job_title, job_description, notes, pay_range, url)
-    const job = createJob(
+    // id, company_name, company_description, job_title, job_description, city,state, source, saved_for_later, employment_type, remote, experience_level, notes, pay_range, url
+    const job = newCreateJob(
         1, 
         "Jobot",
         "Jobot is a revolutionary career platform that combines AI - artificial intelligence with experienced recruiters to fill jobs...and provide incredible service to our clients and candidates in the process.",
@@ -43,6 +44,13 @@ router.get("/testCreateJob", (request, response) => {
         Participate in design and code reviews
         Participate regularly in an Agile team environment and schedule
         Collaborate with UI/UX designers, Product managers, and other front-end developers to create user friendly features and applications`,
+        "SC",
+        "Columbia",
+        "Linkedin",
+        false,
+        "Full-Time",
+        true,
+        "Mid-Level",
         null,
         100000,
         "https://www.linkedin.com/jobs/"
